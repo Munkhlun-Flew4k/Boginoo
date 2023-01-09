@@ -10,7 +10,11 @@ function App() {
       <div className="appmiddle">
         <img src={logo} alt="" width="184" height="118" />
         <div className="appsomediv">
-          <input className="appinput" placeholder="https://www.web-huudas.mn" />
+          <input
+            className="appinput"
+            placeholder="https://www.web-huudas.mn"
+            onChange={(e) => {}}
+          />
           <button className="appbutton">Богиносгох</button>
         </div>
       </div>
