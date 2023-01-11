@@ -1,18 +1,23 @@
-const connect = require("./helper/db");
-connect();
-
 const express = require("express");
-const user = require("./routes/usersRoute");
 const port = 8000;
 const app = express();
+const connect = require("./db");
+const router = require("./routes/routes");
+const cors = require("cors");
+
+var corsOptions = {
+  origin: "http://localhost:3001",
+  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
+
+app.use(cors(corsOptions));
+
+connect();
 
 app.use(express.json());
-app.use("/users", user);
 
-app.get("/hello", (req, res) => {
-  res.send("Hello Express Js");
-});
+app.use("/", router);
 
 app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}/`);
+  console.log("Server is now running on", port);
 });

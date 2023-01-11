@@ -1,0 +1,25 @@
+.Links {
+  display: flex;
+  width: 500px;
+  height: auto;
+  gap: 100px;
+}
+
+.Linkstitle {
+  width: 150px;
+  height: 18px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  color: #000000;
+  opacity: 0.5;
+}
+
+.Linkslink {
+  width: 264px;
+  height: 23px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  color: #000000;
+}
