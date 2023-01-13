@@ -1,6 +1,5 @@
 import "./css/App.css";
 import { Header } from "./Components/Header";
-import { Footer } from "./Components/Footer";
 import logo from "./img/logo.png";
 import { useState } from "react";
 import axios from "axios";
@@ -8,6 +7,7 @@ import { Links } from "./Components/Links";
 
 function App() {
   const [url, setUrl] = useState();
+  const [Link, setLink] = useState({ shortURL: "", originalURL: "" });
 
   const buttonclick = () => {
     axios
@@ -15,15 +15,10 @@ function App() {
         originalURL: url,
       })
       .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-
-    axios
-      .get("http://localhost:8000")
-      .then(function (response) {
+        setLink({
+          shortURL: response.data.shortURL.shortURL,
+          originalURL: response.data.shortURL.originalURL,
+        });
         console.log(response);
       })
       .catch(function (error) {
@@ -48,9 +43,8 @@ function App() {
             Богиносгох
           </button>
         </div>
-        <Links />
+        <Links shorturl={Link.shortURL} originalurl={Link.originalURL} />
       </div>
-      <Footer />
     </div>
   );
 }

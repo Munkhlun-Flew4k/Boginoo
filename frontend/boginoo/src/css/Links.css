@@ -1,8 +1,8 @@
 .Links {
   display: flex;
-  width: 500px;
+  width: 900px;
   height: auto;
-  gap: 100px;
+  justify-content: space-evenly;
 }
 
 .Linkstitle {
@@ -20,6 +20,21 @@
   height: 23px;
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 14px;
   color: #000000;
+}
+
+.linksbutton {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  text-transform: uppercase;
+  color: #ffffff;
+
+  border: 0;
+  margin-top: 15px;
+  background: #02b589;
+  width: 150px;
+  height: 40px;
+  border-radius: 30px;
 }
