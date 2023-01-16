@@ -1,9 +1,9 @@
 import "./css/App.css";
-import { Header } from "./Components/Header";
+import { Header } from "../Components/Header";
 import logo from "./img/logo.png";
 import { useState } from "react";
 import axios from "axios";
-import { Links } from "./Components/Links";
+import { Links } from "../Components/Links";
 
 function App() {
   const [url, setUrl] = useState();

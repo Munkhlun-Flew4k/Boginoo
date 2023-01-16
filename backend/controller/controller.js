@@ -2,7 +2,6 @@ const Link = require("../model/models");
 // const crypto = require('crypto')
 // crypto.randomBytes(5).toString('hex')
 exports.createBoginoo = async (request, response) => {
-  console.log("dsa");
   if (!request.body?.originalURL) {
     response.status(404).send({ message: "originalUrl is required!" });
   } else {
