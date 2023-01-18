@@ -1,5 +1,5 @@
-.loginbutton {
-  width: 183px;
+.headerbutton {
+  width: 150px;
   height: 44px;
   background: #02b589;
   border-radius: 100px;
@@ -11,6 +11,10 @@
   text-transform: uppercase;
   color: #ffffff;
   margin-right: 110px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .header {

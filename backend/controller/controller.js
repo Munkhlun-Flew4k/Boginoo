@@ -1,6 +1,6 @@
+const { request } = require("http");
 const Link = require("../model/models");
-// const crypto = require('crypto')
-// crypto.randomBytes(5).toString('hex')
+
 exports.createBoginoo = async (request, response) => {
   if (!request.body?.originalURL) {
     response.status(404).send({ message: "originalUrl is required!" });
@@ -22,4 +22,12 @@ exports.createBoginoo = async (request, response) => {
       response.status(404).send({ message: "Error", error });
     }
   }
+};
+
+exports.getLinks = async (request, response) => {
+  const links = await Link.find({});
+  response.status(201).send({
+    message: "Successfully created!",
+    data: links,
+  });
 };

@@ -3,6 +3,7 @@ const port = 8000;
 const app = express();
 const connect = require("./db");
 const router = require("./routes/routes");
+const userRouter = require("./routes/userRoute");
 const cors = require("cors");
 
 var corsOptions = {
@@ -15,8 +16,8 @@ app.use(cors(corsOptions));
 connect();
 
 app.use(express.json());
-
 app.use("/", router);
+app.use("/login", userRouter);
 
 app.listen(port, () => {
   console.log("Server is now running on", port);

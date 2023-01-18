@@ -2,9 +2,8 @@
 
 const express = require("express");
 const router = express.Router();
-const { createBoginoo, getBoginoo } = require("../controller/controller");
+const { createBoginoo, getLinks } = require("../controller/controller");
 
-router.post("/", createBoginoo);
-// .get("/:id", getBoginoo);
+router.post("/", createBoginoo).get("/", getLinks);
 
 module.exports = router;

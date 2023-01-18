@@ -1,0 +1,25 @@
+.historydiv {
+  display: flex;
+  flex-direction: column;
+  width: 1000px;
+  gap: 10px;
+}
+
+.historydiv2 {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  height: auto;
+  gap: 20px;
+}
+
+.historytext {
+  margin-left: 57px;
+  width: 74px;
+  height: 37px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  text-align: center;
+  color: #02b589;
+}
