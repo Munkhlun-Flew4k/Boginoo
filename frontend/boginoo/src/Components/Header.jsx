@@ -13,6 +13,9 @@ export const Header = () => {
         <Link to="/History" id="/History" className="headerbutton">
           History
         </Link>
+        <Link to="/Signup" id="/Signup" className="headerbutton">
+          Signup
+        </Link>
       </div>
     </div>
   );
