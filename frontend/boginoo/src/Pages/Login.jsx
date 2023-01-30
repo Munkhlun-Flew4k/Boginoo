@@ -17,7 +17,7 @@ export const Login = () => {
       })
       .then(function (response) {
         if (response.status === 201) {
-          navigate("/");
+          navigate("/logged");
         }
         console.log(response);
       })

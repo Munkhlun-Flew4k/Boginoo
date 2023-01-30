@@ -5,6 +5,7 @@ import { Homepage } from "./Pages/Homepage";
 import { History } from "./Pages/History";
 import { Signup } from "./Pages/Signup";
 import { Logged } from "./Pages/Logged";
+import { Jump } from "./Pages/Jump";
 
 export const App = () => {
   return (
@@ -15,6 +16,7 @@ export const App = () => {
         <Route path="/history" element={<History />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/logged" element={<Logged />} />
+        <Route path="/:id" element={<Jump />} />
       </Routes>
     </BrowserRouter>
   );

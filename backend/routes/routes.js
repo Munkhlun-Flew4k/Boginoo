@@ -2,8 +2,10 @@
 
 const express = require("express");
 const router = express.Router();
-const { createBoginoo, getLinks } = require("../controller/controller");
+const { createBoginoo, getLinks, getID } = require("../controller/controller");
 
-router.post("/", createBoginoo).get("/", getLinks);
+const { auth } = require("../auth/auth");
+
+router.post("/", createBoginoo).get("/", getLinks).get("/:id", getID);
 
 module.exports = router;

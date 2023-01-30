@@ -8,21 +8,25 @@ import { useNavigate } from "react-router-dom";
 export const Signup = () => {
   const [password, setPassword] = useState();
   const [email, setEmail] = useState();
+  const [password2, setPassword2] = useState();
+
   const navigate = useNavigate();
   const buttonclick = () => {
-    axios
-      .post("http://localhost:8000/users", {
-        email: email,
-        password: password,
-      })
-      .then(function (response) {
-        if (response.status === 201) {
-          navigate("/login");
-        }
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    if (password === password2) {
+      axios
+        .post("http://localhost:8000/users", {
+          email: email,
+          password: password,
+        })
+        .then(function (response) {
+          if (response.status === 201) {
+            navigate("/login");
+          }
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
   };
   return (
     <div>
@@ -59,7 +63,13 @@ export const Signup = () => {
             <div>
               <div>
                 <h1 className="inputtitle">Нууц үгээ давтна уу?</h1>
-                <input className="input" placeholder="••••••••••" />
+                <input
+                  className="input"
+                  placeholder="••••••••••"
+                  onChange={(e) => {
+                    setPassword2(e.target.value);
+                  }}
+                />
               </div>
             </div>
             <button className="signupbutton" onClick={buttonclick}>

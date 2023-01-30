@@ -2,6 +2,9 @@ import React from "react";
 import "../css/Links.css";
 
 export const Links = (props) => {
+  const copy = () => {
+    navigator.clipboard.writeText(props.shorturl);
+  };
   return (
     <div className="Links" style={{ display: "flex" }}>
       <div className="Linkssomediv">
@@ -12,7 +15,9 @@ export const Links = (props) => {
         <h1 className="Linkstitle">Богино холбоос:</h1>
         <h1 className="Linkslink">{props.shorturl}</h1>
       </div>
-      <button className="linksbutton">Хуулж авах</button>
+      <button className="linksbutton" onClick={copy}>
+        Хуулж авах
+      </button>
     </div>
   );
 };

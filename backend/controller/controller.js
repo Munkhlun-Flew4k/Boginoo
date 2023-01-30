@@ -9,13 +9,13 @@ exports.createBoginoo = async (request, response) => {
     try {
       const link = await Link.create(originalURL);
       const shortlink = await Link.findByIdAndUpdate(link._id, {
-        shortURL: "http://localhost:8000/" + link._id,
+        shortURL: "http://localhost:3000/" + link._id,
       });
       response.status(201).send({
         message: "Successfully created!",
         shortURL: {
           ...shortlink._doc,
-          shortURL: "http://localhost:8000/" + link._id,
+          shortURL: "http://localhost:3000/" + link._id,
         },
       });
     } catch (error) {
@@ -29,5 +29,14 @@ exports.getLinks = async (request, response) => {
   response.status(201).send({
     message: "Successfully created!",
     data: links,
+  });
+};
+
+exports.getID = async (request, response) => {
+  console.log(request.params.id);
+  const link = await Link.findById(request.params.id);
+  response.status(201).send({
+    message: "Successfully created!",
+    data: link,
   });
 };
