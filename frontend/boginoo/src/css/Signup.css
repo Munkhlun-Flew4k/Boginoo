@@ -44,10 +44,8 @@
 
 .signupbutton {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  padding: 10px 125px;
-  gap: 10px;
+  justify-content: center;
   width: 382px;
   height: 43px;
   background: #02b589;

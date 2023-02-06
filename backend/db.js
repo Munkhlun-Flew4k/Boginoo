@@ -10,4 +10,6 @@ const connect = async () => {
   }
 };
 
+console.log(DB);
+
 module.exports = connect;
